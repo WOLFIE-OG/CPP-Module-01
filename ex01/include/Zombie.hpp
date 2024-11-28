@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 15:52:37 by otodd             #+#    #+#             */
-/*   Updated: 2024/11/28 17:37:06 by otodd            ###   ########.fr       */
+/*   Updated: 2024/11/28 17:55:05 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,9 @@ class Zombie {
 		std::string	name;
 		void		announce(void);
 	public:
-		Zombie(std::string name);
+		int			index;
+		void		init(std::string name, int i);
+		Zombie(void);
 		~Zombie(void);
 };
 

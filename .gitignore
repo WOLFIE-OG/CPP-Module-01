@@ -32,5 +32,6 @@
 *.app
 
 ex00/zombie
+ex01/zombie
 .vscode/launch.json
 .vscode/settings.json

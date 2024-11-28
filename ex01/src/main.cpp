@@ -1,26 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/28 15:52:37 by otodd             #+#    #+#             */
-/*   Updated: 2024/11/28 17:37:06 by otodd            ###   ########.fr       */
+/*   Created: 2024/11/28 15:52:40 by otodd             #+#    #+#             */
+/*   Updated: 2024/11/28 17:58:26 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_H
-# define ZOMBIE_H
-# include <iostream>
+#include "../include/Zombie.hpp"
 
-class Zombie {
-	private:
-		std::string	name;
-		void		announce(void);
-	public:
-		Zombie(std::string name);
-		~Zombie(void);
-};
+Zombie*	zombieHorde(int N, std::string name);
 
-#endif
+int	main()
+{
+	Zombie	*zombies = zombieHorde(10, "Rick");
+	delete []zombies;
+	return (0);
+}
