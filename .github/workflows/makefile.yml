@@ -113,8 +113,20 @@ jobs:
       run: ./sed input.txt the 7H3
       working-directory: ex04
     
-    - name: Replace Linux with Windows | sed
+    - name: Replace the with 7H3 | sed
       run: < input.txt sed 's/the/7H3/g' > sed.output.txt
+      working-directory: ex04
+
+    - name: diff outputs
+      run: diff -s sed.output.txt input.txt.replace
+      working-directory: ex04
+    
+    - name: Replace spaces with underscores | Own
+      run: ./sed input.txt " " _
+      working-directory: ex04
+    
+    - name: Replace spaces with underscores | sed
+      run: < input.txt sed 's/ /_/g' > sed.output.txt
       working-directory: ex04
 
     - name: diff outputs
