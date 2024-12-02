@@ -144,4 +144,3 @@ jobs:
     - name: diff outputs
       run: diff -s sed.output.txt loremipsum.txt.replace.replace.replace.replace.replace
       working-directory: ex04
-    
