@@ -1,0 +1,13 @@
+Here’s your text formatted into paragraphs for better readability:
+
+---
+
+Linux (/ˈlɪnʊks/, LIN-uuks) is a family of open-source Unix-like operating systems based on the Linux kernel, an operating system kernel first released on September 17, 1991, by Linus Torvalds. Linux is typically packaged as a Linux distribution (distro), which includes the kernel and supporting system software and libraries — many of which are provided by the GNU Project — to create a complete operating system.
+
+Many Linux distributions use the word "Linux" in their name, but the Free Software Foundation uses and recommends the name "GNU/Linux" to emphasize the use and importance of GNU software in many distributions, causing some controversy. Thousands of distributions exist, many based directly or indirectly on other distributions. Popular Linux distributions include Debian, Fedora Linux, Arch Linux, and Ubuntu, while commercial distributions include Red Hat Enterprise Linux and SUSE Linux Enterprise. Other than the Linux kernel, key components that make up a distribution may include a display server (windowing system), a package manager, a bootloader, and the Bash shell.
+
+Linux is one of the most prominent examples of free and open-source software collaboration. While originally developed for x86-based personal computers, it has since been ported to more platforms than any other operating system and is used on a wide variety of devices including PCs, workstations, mainframes, and embedded systems. Linux is the predominant operating system for servers and is also used on all of the world's 500 fastest supercomputers. When combined with Android, which is Linux-based and designed for smartphones, they have the largest installed base of all general-purpose operating systems.
+
+---
+
+This structure separates major ideas into distinct paragraphs, improving clarity and flow.

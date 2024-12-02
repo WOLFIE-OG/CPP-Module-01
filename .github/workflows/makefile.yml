@@ -80,4 +80,44 @@ jobs:
     - name: Run ex03
       run: ./weapon
       working-directory: ex03
+
+    - name: Make ex04
+      run: make
+      working-directory: ex04
+
+    - name: Re-make ex04
+      run: make re
+      working-directory: ex04
+
+    - name: View contents of ex04
+      run: nm -C sed
+      working-directory: ex04
+    
+    - name: Output sample input
+      run: cat input.txt
+      working-directory: ex04
+    
+    - name: Replace Linux with Windows | Own
+      run: ./sed input.txt Linux Windows
+      working-directory: ex04
+    
+    - name: Replace Linux with Windows | sed
+      run: < input.txt sed 's/Linux/Windows/g' > sed.output.txt
+      working-directory: ex04
+
+    - name: diff outputs
+      run: diff -s sed.output.txt input.txt.replace
+      working-directory: ex04
+
+    - name: Replace the with 7H3 | Own
+      run: ./sed input.txt the 7H3
+      working-directory: ex04
+    
+    - name: Replace Linux with Windows | sed
+      run: < input.txt sed 's/the/7H3/g' > sed.output.txt
+      working-directory: ex04
+
+    - name: diff outputs
+      run: diff -s sed.output.txt input.txt.replace
+      working-directory: ex04
     
