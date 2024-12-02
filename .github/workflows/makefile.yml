@@ -134,7 +134,7 @@ jobs:
       working-directory: ex04
 
     - name: 1337 Replace | Own
-      run: ./sed loremipsum.txt a 4 && ./sed loremipsum.txt.replace e 3 && ./sed loremipsum.txt.replace.replace t 7 && ./sed loremipsum.txt.replace.replace.replace l 1 && ./sed loremipsum.txt.replace.replace.replace o 0 && ./sed loremipsum.txt.replace.replace.replace.replace s 5
+      run: ./sed loremipsum.txt a 4 && ./sed loremipsum.txt.replace e 3 && ./sed loremipsum.txt.replace.replace t 7 && ./sed loremipsum.txt.replace.replace.replace l 1 && ./sed loremipsum.txt.replace.replace.replace.replace o 0 && ./sed loremipsum.txt.replace.replace.replace.replace.replace s 5
       working-directory: ex04
     
     - name: 1337 Replace | sed
@@ -142,6 +142,6 @@ jobs:
       working-directory: ex04
 
     - name: diff outputs
-      run: diff -s sed.output.txt loremipsum.txt.replace.replace.replace.replace
+      run: diff -s sed.output.txt loremipsum.txt.replace.replace.replace.replace.replace
       working-directory: ex04
     
