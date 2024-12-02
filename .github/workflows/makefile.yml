@@ -58,7 +58,7 @@ jobs:
       working-directory: ex02
 
     - name: View contents of ex02
-      run: nm -C zombie
+      run: nm -C brain
       working-directory: ex02
     
     - name: Run ex02
@@ -74,7 +74,7 @@ jobs:
       working-directory: ex03
 
     - name: View contents of ex03
-      run: nm -C zombie
+      run: nm -C weapon
       working-directory: ex03
     
     - name: Run ex03
