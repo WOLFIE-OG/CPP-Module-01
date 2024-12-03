@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:59:08 by otodd             #+#    #+#             */
-/*   Updated: 2024/12/02 17:36:36 by otodd            ###   ########.fr       */
+/*   Updated: 2024/12/02 19:28:25 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,11 @@ void	Settings::write(void)
 void	Settings::read(void)
 {
 	std::string	line;
-	while (getline(this->in_file, line, '\n'))
+	while (getline(this->in_file, line))
 	{
-		if (!this->buffer.empty())
+		if (this->in_file.peek() == '\n')
+			line.push_back('\n');
+		if (line.empty())
 			this->buffer.append("\n");
 		this->buffer.append(line);
 	}

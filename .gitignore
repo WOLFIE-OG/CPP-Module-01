@@ -36,5 +36,6 @@ ex01/zombie
 ex02/brain
 ex03/weapon
 ex04/sed
+.venv
 .vscode/launch.json
 .vscode/settings.json
