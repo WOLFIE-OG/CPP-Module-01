@@ -6,7 +6,7 @@
 /*   By: otodd <otodd@student.42london.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/02 13:59:08 by otodd             #+#    #+#             */
-/*   Updated: 2024/12/02 19:28:25 by otodd            ###   ########.fr       */
+/*   Updated: 2024/12/03 18:17:12 by otodd            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,8 @@ void	Settings::replace(void)
 		return ;
 
 	std::string	result;
-	const char	*c_buffer = this->buffer.c_str();
-	const char	*target = this->s1.c_str();
 	size_t		start = 0;
-	int			i = 0;
+	size_t		i = 0;
 
 	while (i < this->buffer.length())
 	{
