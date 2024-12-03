@@ -93,56 +93,8 @@ jobs:
       run: nm -C sed
       working-directory: ex04
     
-    - name: Output sample input
-      run: cat input.txt
-      working-directory: ex04
-    
-    - name: Replace Linux with Windows | Own
-      run: ./sed input.txt Linux Windows
-      working-directory: ex04
-    
-    - name: Replace Linux with Windows | sed
-      run: < input.txt sed 's/Linux/Windows/g' > sed.output.txt
-      working-directory: ex04
-
-    - name: diff outputs
-      run: diff -s sed.output.txt input.txt.replace
-      working-directory: ex04
-
-    - name: Replace the with 7H3 | Own
-      run: ./sed input.txt the 7H3
-      working-directory: ex04
-    
-    - name: Replace the with 7H3 | sed
-      run: < input.txt sed 's/the/7H3/g' > sed.output.txt
-      working-directory: ex04
-
-    - name: diff outputs
-      run: diff -s sed.output.txt input.txt.replace
-      working-directory: ex04
-    
-    - name: Replace spaces with underscores | Own
-      run: ./sed input.txt " " _
-      working-directory: ex04
-    
-    - name: Replace spaces with underscores | sed
-      run: < input.txt sed 's/ /_/g' > sed.output.txt
-      working-directory: ex04
-
-    - name: diff outputs
-      run: diff -s sed.output.txt input.txt.replace
-      working-directory: ex04
-
-    - name: 1337 Replace | Own
-      run: ./sed loremipsum.txt a 4 && ./sed loremipsum.txt.replace e 3 && ./sed loremipsum.txt.replace.replace t 7 && ./sed loremipsum.txt.replace.replace.replace l 1 && ./sed loremipsum.txt.replace.replace.replace.replace o 0 && ./sed loremipsum.txt.replace.replace.replace.replace.replace s 5
-      working-directory: ex04
-    
-    - name: 1337 Replace | sed
-      run: < loremipsum.txt sed 's/a/4/g' | sed 's/e/3/g' | sed 's/t/7/g' | sed 's/l/1/g' | sed 's/o/0/g' | sed 's/s/5/g' > sed.output.txt
-      working-directory: ex04
-
-    - name: diff outputs
-      run: diff -s sed.output.txt loremipsum.txt.replace.replace.replace.replace.replace
+    - name: Run ex04 tests
+      run: bash tests.sh
       working-directory: ex04
 
     - name: Make ex05

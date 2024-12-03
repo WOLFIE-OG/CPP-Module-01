@@ -6,7 +6,7 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/03 11:56:46 by otodd             #+#    #+#              #
-#    Updated: 2024/12/03 18:15:48 by otodd            ###   ########.fr        #
+#    Updated: 2024/12/03 18:24:14 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,10 +54,9 @@ if not os.path.exists(TMP_DIR):
 with open(".github/workflows/makefile.yml") as f:
     action = safe_load(f)
 
-# logger.info("Fetching repo url")
-# proc = Popen("git config --get remote.origin.url", stdout=PIPE, shell=True)
-# repo_url = proc.stdout.read().decode("utf-8").strip()
-repo_url = os.getcwd()
+logger.info("Fetching repo url")
+proc = Popen("git config --get remote.origin.url", stdout=PIPE, shell=True)
+repo_url = proc.stdout.read().decode("utf-8").strip()
 repo_dir = Path(TMP_DIR, os.getcwd().split("/")[0], ID)
 os.mkdir(repo_dir)
 logger.info(f"Cloning [{repo_url}] into {repo_dir}")
@@ -111,6 +110,11 @@ for index, step in enumerate(action["jobs"][JOB_NAME].get("steps")):
         )
         logger.error(f" {5 * '='} [ Step stderr finish ] {5 * '='}")
         if step.get("continue-on-error", False) != True:
-            break
+            exit()
+            logger.info("Exiting")
     logger.info(f"{5 * '='} [ Step stdout finish ] {5 * '='}")
     logger.info(f"{10 * '='}| Finished step |{10 * '='}\n")
+    
+logger.warning(f"Cleaning tmp {repo_dir}")
+os.system(f"rm -rf {repo_dir}")
+logger.info("Exiting")
