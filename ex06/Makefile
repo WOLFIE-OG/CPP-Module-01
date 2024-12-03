@@ -6,7 +6,7 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/02 13:56:42 by otodd             #+#    #+#              #
-#    Updated: 2024/12/03 15:43:21 by otodd            ###   ########.fr        #
+#    Updated: 2024/12/03 17:18:29 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,14 +19,14 @@ NC			=	\033[0m
 
 CC			=	g++
 CXXFLAGS 	= 	-g -Wall -Wextra -Werror -std=c++98
-NAME		=	sed
+NAME		=	harlFilter
 
 INCLUDE_DIR	=	include
 SRC_DIR 	= 	src
 OBJ_DIR 	= 	obj
 
 SRC			=	$(SRC_DIR)/main.cpp \
-				$(SRC_DIR)/Settings.cpp
+				$(SRC_DIR)/Harl.cpp
 
 OBJS 		= 	$(SRC:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 HEADERS		=	-I$(INCLUDE_DIR)

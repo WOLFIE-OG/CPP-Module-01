@@ -144,3 +144,51 @@ jobs:
     - name: diff outputs
       run: diff -s sed.output.txt loremipsum.txt.replace.replace.replace.replace.replace
       working-directory: ex04
+
+    - name: Make ex05
+      run: make
+      working-directory: ex05
+
+    - name: Re-make ex05
+      run: make re
+      working-directory: ex05
+
+    - name: View contents of ex05
+      run: nm -C harl
+      working-directory: ex05
+    
+    - name: Run ex05
+      run: ./harl
+      working-directory: ex05
+    
+    - name: Make ex06
+      run: make
+      working-directory: ex06
+
+    - name: Re-make ex06
+      run: make re
+      working-directory: ex06
+
+    - name: View contents of ex06
+      run: nm -C harlFilter
+      working-directory: ex06
+    
+    - name: Run ex06 | DEBUG
+      run: ./harlFilter DEBUG
+      working-directory: ex06
+    
+    - name: Run ex06 | INFO
+      run: ./harlFilter INFO
+      working-directory: ex06
+    
+    - name: Run ex06 | WARNING
+      run: ./harlFilter WARNING
+      working-directory: ex06
+    
+    - name: Run ex06 | ERROR
+      run: ./harlFilter ERROR
+      working-directory: ex06
+    
+    - name: Run ex06 | Non Level
+      run: ./harlFilter "I hate mondays"
+      working-directory: ex06

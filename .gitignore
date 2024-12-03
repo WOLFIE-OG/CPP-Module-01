@@ -36,6 +36,8 @@ ex01/zombie
 ex02/brain
 ex03/weapon
 ex04/sed
+ex05/harl
+ex06/harlFilter
 .venv
 .vscode/launch.json
 .vscode/settings.json

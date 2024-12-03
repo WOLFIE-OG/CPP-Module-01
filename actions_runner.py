@@ -6,7 +6,7 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/03 11:56:46 by otodd             #+#    #+#              #
-#    Updated: 2024/12/03 15:30:44 by otodd            ###   ########.fr        #
+#    Updated: 2024/12/03 15:41:51 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ formatter = ColoredFormatter(log_format, datefmt='%Y-%m-%d %H:%M:%S')
 console_handler.setFormatter(formatter)
 ID = uuid4().__str__()
 logger = logging.getLogger("actions_runner")
-logging.basicConfig(level=logging.INFO, filename=Path(ID + ".log"))
+logging.basicConfig(level=logging.DEBUG, filename=Path(ID + ".log"))
 logger.addHandler(console_handler)
 
 TMP_DIR = Path("/tmp/actions_runner")
@@ -69,13 +69,19 @@ Repo.clone_from(multi_options=["--recursive", "--progress"], to_path=repo_dir, u
 
 logger.info(f"Running steps for {action.get("name")} on job {JOB_NAME}")
 
-for step in action["jobs"][JOB_NAME].get("steps"):
+for index, step in enumerate(action["jobs"][JOB_NAME].get("steps")):
     if not step.get("run"):
         continue
     logger.info(f"Running step: {step.get("name")}")
-    proc = Popen(step.get("run"), cwd=Path(repo_dir.__str__() + "/" + step.get("working-directory")) if step.get("working-directory") else Path(repo_dir), shell=True)
+    out = PIPE
+    proc = Popen(step.get("run"), stdout=out, stderr=out, cwd=Path(repo_dir.__str__() + "/" + step.get("working-directory")) if step.get("working-directory") else Path(repo_dir), shell=True)
+    while True:
+        line = proc.stdout.readline().decode("utf-8").strip()
+        if not line:
+            break
+        logger
+        logger.debug("  " * 2 + line)
     ret = proc.wait(500)
     if ret != 0 and step.get("continue-on-error") is not True:
         logger.error("Step failed!")
         break
-    print(5 * '\n')
