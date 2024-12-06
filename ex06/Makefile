@@ -6,7 +6,7 @@
 #    By: otodd <otodd@student.42london.com>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/12/02 13:56:42 by otodd             #+#    #+#              #
-#    Updated: 2024/12/03 17:18:29 by otodd            ###   ########.fr        #
+#    Updated: 2024/12/06 14:25:19 by otodd            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ BLUE		=	\033[1;34m
 CYAN		=	\033[1;36m
 NC			=	\033[0m
 
-CC			=	g++
+CC			=	c++
 CXXFLAGS 	= 	-g -Wall -Wextra -Werror -std=c++98
 NAME		=	harlFilter
 
